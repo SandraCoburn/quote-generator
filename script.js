@@ -7,8 +7,20 @@ const newQuoteBtn = document.getElementById('new-quote');
 
 //Get Quotes From API
 let apiQuotes = [];
+
+//Show Loading
+function loading() {
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+}
+//Hide Loading
+function complete() {
+  loader.hidden = true;
+  quoteContainer.hidden = false;
+}
 //Show new quote
 function newQuote() {
+  loading();
   //Pick a random quote from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
@@ -24,8 +36,11 @@ function newQuote() {
   } else {
     quoteText.classList.remove('long-quote');
   }
+  // Set quote, hide loader
   quoteText.textContent = quote.text;
+  complete();
 }
+//Get quotes from api
 async function getQuotes() {
   const apiUrl = 'https://type.fit/api/quotes';
   try {
