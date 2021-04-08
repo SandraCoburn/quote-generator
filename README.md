@@ -8,3 +8,4 @@ Vanilla Javascript practice
 - [Javascript Cheatsheet](https://zerotomastery.io/cheatsheets/javascript-cheatsheet-the-advanced-concepts/?utm_source=udemy&utm_medium=coursecontent)
 - [Code Challenges](https://zerotomastery.io/community/coding-challenges/) - Javascript projects
 - [Hero Patterns](https://www.heropatterns.com/) - A variety of cool backgrounds
+- [Tweeter Developer](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/web-intent) To be used with dom manipulation
