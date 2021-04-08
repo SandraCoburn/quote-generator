@@ -8,19 +8,18 @@ const newQuoteBtn = document.getElementById('new-quote');
 //Get Quotes From API
 let apiQuotes = [];
 
-//Show Loading
-function loading() {
+function loadSpinner() {
   loader.hidden = false;
   quoteContainer.hidden = true;
 }
 //Hide Loading
-function complete() {
+function removeSpinner() {
   loader.hidden = true;
   quoteContainer.hidden = false;
 }
 //Show new quote
 function newQuote() {
-  loading();
+  loadSpinner();
   //Pick a random quote from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
@@ -38,7 +37,7 @@ function newQuote() {
   }
   // Set quote, hide loader
   quoteText.textContent = quote.text;
-  complete();
+  removeSpinner();
 }
 //Get quotes from api
 async function getQuotes() {
@@ -49,6 +48,7 @@ async function getQuotes() {
     newQuote();
   } catch (error) {
     // handle errors
+    alert('There was an error loading the quotes. Try again..');
     console.log(error);
   }
 }
